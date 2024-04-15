@@ -40,6 +40,8 @@ function createRow() {
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "Sil";
     
+    
+    
     saveButton.addEventListener("click", function() {
         const ad = input1.value;
         const soyad = input2.value;
@@ -47,15 +49,27 @@ function createRow() {
         cell2.textContent = ad;
         cell3.textContent = soyad;
         cell4.textContent=yas
-        cell5.innerHTML = ""; 
+        saveButton.textContent = "edit";
+      
+
        
+    });
+    deleteButton.addEventListener("click", function() {
+        tr.remove(); 
     });
     cell5.append(saveButton);
     cell5.append(deleteButton);
-    
+    cell5.append(createEditButton());
     
     tr.append(cell5);
 
     tbody.append(tr);
     
+}
+function createEditButton() {
+    const editButton = document.createElement("button");
+    editButton.addEventListener("click", function() {
+    
+    });
+    return editButton;
 }
